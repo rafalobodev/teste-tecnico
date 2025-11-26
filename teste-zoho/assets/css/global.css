@@ -50,6 +50,48 @@ body {
 }
 
 /* ================================
+   ESTILOS DO LOADER
+   ================================ */
+
+#loader-wrapper {
+    /* Ocupa a altura mínima da tela para aparecer centralizado */
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Fixa o loader na tela, impedindo interação */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Fundo que cobre o app */
+    z-index: 9999; /* Garante que fique acima de tudo */
+    transition: opacity 0.5s ease;
+}
+
+.spinner {
+    border: 8px solid #f3f3f3; /* Cinza claro */
+    border-top: 8px solid #0056b3; /* Cor primária (azul) */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Classe para esconder o loader APÓS o carregamento */
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* ================================
    DRY(funções reutilizáveis)
    ================================ */
 .btn-primary {

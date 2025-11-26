@@ -13,6 +13,10 @@
 <body>
 
     <!-- Onde os componentes serão carregados -->
+     <div id="loader-wrapper">
+        <div class="spinner"></div> 
+        <p>Carregando conteúdo...</p>
+    </div>
     <main id="app"></main>
 
     <!-- jQuery -->
@@ -23,13 +27,36 @@
     <!-- Importador dos componentes HTML -->
     <script>
         $(function () {
-            $("#app")
-                .append($("<div>").load("components/hero.html"))
-                .append($("<div>").load("components/testimonial.html"))
-                .append($("<div>").load("components/features.html"))
-                .append($("<div>").load("components/advantages.html"))
-                .append($("<div>").load("components/tabs.html"))
-                .append($("<div>").load("components/footer.html"));
+            const $app = $("#app");
+            const componentFiles = [
+                "components/hero.html",
+                "components/testimonial.html",
+                "components/features.html",
+                "components/advantages.html",
+                "components/tabs.html",
+                "components/footer.html"
+            ];
+            const totalComponents = componentFiles.length;
+            let loadedComponents = 0;
+
+            function checkLoadingComplete() {
+                loadedComponents++;
+                if (loadedComponents === totalComponents) {
+                    // 1. Esconde o loader (com fade)
+                    $('#loader-wrapper').addClass('loader-hidden'); 
+                    
+                    // 2. Opcional: Remove o loader do DOM após a transição
+                    setTimeout(function() {
+                        $('#loader-wrapper').remove();
+                    }, 500); // 500ms é um pouco mais longo que a transição CSS
+                }
+            }
+
+            componentFiles.forEach(function(file) {
+                // Adiciona o componente e chama checkLoadingComplete no callback de sucesso
+                $app.append($("<div>").load(file, checkLoadingComplete));
+            });
+
         });
     </script>
 
