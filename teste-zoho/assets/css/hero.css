@@ -1,0 +1,164 @@
+/* ================================
+   HEADER
+   ================================ */
+.header {
+    width: 100%;
+    padding: 30px 0;
+    background: linear-gradient(90deg, #0019c8, #0863e6);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.sprite {
+    background-image: url("../images/hero/logo_css_sprites.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    background-size: auto; 
+}
+
+.sprite-logo {
+    width: 150px;
+    height: 100px;
+    background-position: 0px 0px; 
+     position: relative; 
+}
+
+.header-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: white;
+    margin-left: 5px; 
+    margin-top: -15px; 
+}
+
+/* ================================
+   HERO SECTION
+   ================================ */
+.hero {
+    width: 100%;
+    padding: 80px 0;
+    background: linear-gradient(90deg, #0019c8, #0863e6);
+    color: white;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-left {
+    max-width: 600px;
+}
+
+.hero-title {
+    font-size: 44px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 25px;                 
+}
+
+.hero-subtitle {
+    font-size: 17px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.hero-right {
+    width: 300px;              
+    height: 300px;             
+    background-color: #0055cc; 
+    display: flex;             
+    justify-content: center;   
+    align-items: center;       
+    border-radius: 8px;        
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+    overflow: hidden;          /* garante que imagens não vazem */
+    position: relative;        
+    gap: 7px; 
+}
+
+.white-square {
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    border-radius: 4px; /* opcional, borda levemente arredondada */
+}
+
+.plus-button {
+    /* ----- PROPRIEDADES ATUAIS DO BOTÃO ----- */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 43px;
+    height: 43px;
+    background-color: #FFDA26;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 1;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    cursor: pointer;
+    border: 3px solid #FFC107;
+    
+    /* ----- Adiciona uma transição suave para os efeitos de hover ----- */
+    transition: all 0.2s ease-in-out; 
+}
+
+
+.plus-button:hover {
+    /* Leve aumento de tamanho */
+    transform: translate(-50%, -50%) scale(1.1); 
+    
+    /* Sombra mais pronunciada para dar a impressão de "elevação" */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.5); 
+    
+    /* Pode mudar levemente a cor de fundo */
+    background-color: #FFDE52; 
+    
+}
+
+/* com bordas arredondadas */
+.plus-icon {
+    position: relative;
+    width: 20px; /* Largura total do símbolo "+" */
+    height: 20px; /* Altura total do símbolo "+" */
+}
+
+.plus-icon::before,
+.plus-icon::after {
+    content: '';
+    position: absolute;
+    background-color: black; /* Cor do "+" */
+    border-radius: 2px; /* Arredonda as pontas */
+}
+
+/* Barra Horizontal */
+.plus-icon::before {
+    width: 100%; /* Ocupa a largura total do .plus-icon */
+    height: 3px; /* Espessura da barra */
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+/* Barra Vertical */
+.plus-icon::after {
+    width: 3px; /* Espessura da barra */
+    height: 100%; /* Ocupa a altura total do .plus-icon */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}

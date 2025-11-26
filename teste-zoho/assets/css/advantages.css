@@ -1,0 +1,96 @@
+.advantages {
+    max-width: 1170px;
+    /* Mantém o padding vertical */
+    padding: 80px 0 100px 0;
+    
+    background-color: #f7f7f7; 
+    
+    color: #111;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+.container {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px; 
+    padding-right: 15px; /* Para responsividade em telas menores */
+    width: 100%;
+}
+
+.advantages-main-title {
+    font-size: 38px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 60px;
+    margin-left: 70px;
+}
+
+.advantages-grid {
+    display: grid;
+    /* Define o layout EXATAMENTE para 2 colunas */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px 40px;
+}
+
+.advantage-card {
+    background-color: #f7f7f7; 
+    padding: 30px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    cursor: default;
+    /* Remove a sombra se tiver sido aplicada na tentativa anterior */
+    box-shadow: none; 
+    margin-left: 40px;
+}
+
+.advantage-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    /* Garante que o texto fique logo abaixo do ícone */
+    display: block; 
+}
+
+.advantage-text {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* ================================
+   RESPONSIVIDADE: VANTAGENS
+   ================================ */
+
+@media (max-width: 1200px) {
+    /* Ajusta a largura fixa para ser fluida em telas um pouco menores que 1200px */
+    .advantages {
+        width: 90%; /* Deixa fluida, usando 90% da largura do viewport */
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .advantages-main-title {
+        text-align: center;
+        margin-left: 0; 
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .advantages-grid {
+        /* Altera de 2 colunas para 1 coluna */
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+    
+    .advantage-card {
+        padding: 20px;
+    }
+    
+    .advantages {
+        width: 100%;
+        padding: 50px 20px;
+    }
+}

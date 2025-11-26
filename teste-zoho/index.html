@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Zoho</title>
+
+    <link rel="icon" type="image/png" href="assets/images/hero/logo_css_sprites.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/global.css">
+</head>
+<body>
+
+    <!-- Onde os componentes serão carregados -->
+    <main id="app"></main>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Scripts do projeto em caso global -->
+
+    <!-- Importador dos componentes HTML -->
+    <script>
+        $(function () {
+            $("#app")
+                .append($("<div>").load("components/hero.html"))
+                .append($("<div>").load("components/testimonial.html"))
+                .append($("<div>").load("components/features.html"))
+                .append($("<div>").load("components/advantages.html"))
+                .append($("<div>").load("components/tabs.html"))
+                .append($("<div>").load("components/footer.html"));
+        });
+    </script>
+
+</body>
+</html>

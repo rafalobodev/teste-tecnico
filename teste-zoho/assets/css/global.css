@@ -1,0 +1,136 @@
+/* ================================
+   FONTES ZOHO PUVI
+   ================================ */
+@font-face {
+    font-family: 'Zoho Puvi';
+    src: url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zoho Puvi';
+    src: url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zoho Puvi';
+    src: url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ================================
+   RESET
+   ================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Zoho Puvi", sans-serif;
+    background: #fff;
+    color: #111;
+    line-height: 1.6;
+}
+
+/* Container 1170px */
+.container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ================================
+   DRY(funções reutilizáveis)
+   ================================ */
+.btn-primary {
+    padding: 15px 28px;
+    background: #ef4136;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 3px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    opacity: 0.8;
+}
+
+
+
+/* ================================
+   RESPONSIVIDADE (MOBILE FIRST)
+   ================================ */
+
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-left {
+        max-width: 100%;
+    }
+
+    .hero-right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-title {
+        font-size: 38px;
+    }
+
+    .advantages-grid {
+        /* No mobile, force a grade a ter apenas 1 coluna */
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+}
+
+/* 480px */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .testimonial-box {
+        padding: 40px 25px;
+    }
+}
+
+/* 320px — mínima exigida no teste */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+    }
+
+    .header-title {
+        font-size: 22px;
+    }
+
+    /* .sprite-logo {
+        transform: scale(0.8);
+    } */
+}

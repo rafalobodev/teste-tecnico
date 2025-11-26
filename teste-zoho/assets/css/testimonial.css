@@ -1,0 +1,142 @@
+.testimonial-section {
+    /* Puxa a seção para cima para sobrepor o Hero */
+    margin-top: -70px; 
+    z-index: 10; 
+    position: relative; 
+    padding: 10px 0;
+    background-color: transparent; 
+}
+
+.container {
+    max-width: 1170px;
+}
+
+/* O estilo do .testimonial-card e seus filhos (quotes-icon, etc.) não precisa de alteração
+   e deve permanecer como antes para centralizar o cartão branco. */
+.testimonial-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 60px 80px;
+    max-width: 1000px; 
+    margin: 0 auto; 
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    position: relative;
+    color: #4a4a4a;
+}
+
+/* Aspas */
+.quotes-icon, .quotes-icon-right {
+    position: absolute;
+    font-size: 80px;
+    line-height: 1;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    color: #e0e0f0;
+}
+
+.quotes-icon {
+    top: 30px;
+    left: 40px;
+    /* transform: rotate(180deg); */
+}
+
+.quotes-icon-right {
+    bottom: 200px;
+    right: 50px;
+    /* transform: rotate(180deg); */
+}
+
+.testimonial-text {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    padding: 0 40px; /* Garante que o texto não chegue perto das aspas */
+}
+
+/* Informações do Cliente */
+.client-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.client-avatar {
+    width: 60px;
+    height: 60px;
+    background-image: url('../images/testimonial/client_avatar.png');
+    background-color: #f0f0f0; /* Cor de fundo se a imagem falhar */
+    background-size: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.client-name {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #111;
+    margin-bottom: 15px;
+}
+
+.learn-more-link {
+    font-size: 10px;
+    font-weight: 500;
+    color: #007bff;
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.learn-more-link:hover {
+    color: #0056b3;
+}
+
+/* Pontos de Navegação */
+.slider-dots {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc; /* Cor cinza para os pontos inativos */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #007bff; /* Cor azul para o ponto ativo */
+}
+
+/* Pontos de Navegação (Agora estiliza o bloco único) */
+.slider-dots {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 10px;
+}
+
+/* Pontos de Navegação */
+.slider-dots {
+    /* O margin-top já não funciona bem, use position: absolute */
+    
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    
+    /* MODIFICAÇÕES CRUCIAIS PARA POSICIONAR OS DOTS ABAIXO DO CARD */
+    position: absolute; 
+    bottom: 35px; /* Distância do fundo do .container */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza os dots */
+    z-index: 10; /* Garante que fiquem acima do card */
+}
